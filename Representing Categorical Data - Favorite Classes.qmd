@@ -1,0 +1,36 @@
+---
+title: "Representing Categorical Data - Favorite Classes"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(googlesheets4)
+library(janitor)
+```
+
+```{r}
+url = "https://docs.google.com/spreadsheets/d/1JmVLUjtSwcuxApJXFFYu7sbre7s0pHjOfz2bmnwDMnQ/edit?usp=sharing"
+df = read_sheet(url) |> 
+  clean_names()
+```
+# 1. Make a barplot of `what_is_your_favorite_core_class`
+
+```{r}
+df |> 
+  ggplot()
+```
+
+# 2. Make a barplot of `what_is_your_favorite_elective_class`
+
+```{r}
+
+```
+
+# 3. Make a stacked barplot of `what_is_your_favorite_core_class` and `what_is_your_favorite_elective_class`
+
+```{r}
+
+```
+
+# 4. Make a side by side barplot of `what_is_your_favorite_core_class` and `what_is_your_favorite_elective_class`
