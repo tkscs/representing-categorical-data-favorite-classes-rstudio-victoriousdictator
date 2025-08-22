@@ -1,4 +1,4 @@
----
+1---
 title: "Representing Categorical Data - Favorite Classes"
 format: html
 ---
@@ -18,19 +18,86 @@ df = read_sheet(url) |>
 
 ```{r}
 df |> 
-  ggplot()
+  ggplot() +
+  aes(
+    x = what_is_your_favorite_core_class, 
+    color = what_is_your_favorite_core_class,
+    fill = what_is_your_favorite_core_class
+  ) +
+  geom_bar() + 
+  scale_color_brewer(type = "qual", palette = 1) +
+  scale_fill_brewer(type = "qual", palette = 1) +
+  labs(
+    title = "KAT Stats Favorite Core Classes",
+    x = "Favorite Core Class",
+    y = "Frequency",
+    color = NULL,
+    fill = NULL
+  )
 ```
 
 # 2. Make a barplot of `what_is_your_favorite_elective_class`
 
 ```{r}
-
+df |> 
+  ggplot() +
+  aes(
+    x = what_is_your_favorite_elective_class, 
+    color = what_is_your_favorite_elective_class,
+    fill = what_is_your_favorite_elective_class
+  ) +
+  geom_bar() + 
+  scale_color_brewer(type = "qual", palette = 2) +
+  scale_fill_brewer(type = "qual", palette = 2) +
+  labs(
+    title = "KAT Stats Favorite Elective Classes",
+    x = "Favorite Core Class",
+    y = "Frequency",
+    color = NULL,
+    fill = NULL
+  )
 ```
 
 # 3. Make a stacked barplot of `what_is_your_favorite_core_class` and `what_is_your_favorite_elective_class`
 
 ```{r}
-
+df |> 
+  ggplot() +
+  aes(
+    x = what_is_your_favorite_core_class, 
+    color = what_is_your_favorite_elective_class,
+    fill = what_is_your_favorite_elective_class
+  ) +
+  geom_bar() + 
+  scale_color_brewer(type = "qual", palette = 2) +
+  scale_fill_brewer(type = "qual", palette = 2) +
+  labs(
+    title = "KAT Stats Favorite Core Classes",
+    x = "Favorite Core Class",
+    y = "Frequency",
+    color = NULL,
+    fill = NULL
+  )
 ```
 
 # 4. Make a side by side barplot of `what_is_your_favorite_core_class` and `what_is_your_favorite_elective_class`
+```{r}
+df |> 
+  ggplot() +
+  aes(
+    x = what_is_your_favorite_core_class, 
+    color = what_is_your_favorite_elective_class,
+    fill = what_is_your_favorite_elective_class
+  ) +
+  geom_bar(position = "dodge") + 
+  scale_color_brewer(type = "qual", palette = 2) +
+  scale_fill_brewer(type = "qual", palette = 2) +
+  labs(
+    title = "KAT Stats Favorite Core Classes",
+    x = "Favorite Core Class",
+    y = "Frequency",
+    color = NULL,
+    fill = NULL
+  )
+```
+
